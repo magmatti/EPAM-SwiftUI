@@ -11,7 +11,7 @@ struct ContentView: View {
     ]
     
     var body: some View {
-        List {
+        List { 
             ForEach($shoppingItems) { $item in
                 HStack {
                     Text(item.name)
