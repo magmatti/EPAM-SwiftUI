@@ -1,27 +1,20 @@
 import SwiftUI
 
-struct ParentView: View {
-    @State private var isOn = false
+struct ContentView: View {
+    @State private var show = false
 
     var body: some View {
         VStack(spacing: 16) {
-            Text(isOn ? "On" : "Off")
-                .font(.title2).bold()
-            ChildToggleView(isOn: $isOn)
+            Toggle("Show Greeting", isOn: $show)
+            if show {
+                Text("Hello, SwiftUI!")
+                    .font(.title2)
+            }
         }
         .padding()
     }
 }
 
-struct ChildToggleView: View {
-    @Binding var isOn: Bool
-
-    var body: some View {
-        Toggle("Control from Child", isOn: $isOn)
-            .padding(.horizontal)
-    }
-}
-
 #Preview {
-    ParentView()
+    ContentView()
 }
