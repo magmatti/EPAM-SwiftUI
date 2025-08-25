@@ -4,7 +4,7 @@ import SwiftUI
 struct task2App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ParentView()
         }
     }
 }
